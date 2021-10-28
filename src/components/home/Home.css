@@ -1,0 +1,19 @@
+.home-chart {
+    margin-top: 3rem;
+}
+
+.chart-main {
+    margin: auto;
+}
+.faq {
+    width: 65%;
+    padding: 3rem 1rem 3rem 1rem;
+    margin: auto;
+}
+
+@media only screen and (max-width:688px) {
+    .service-chart {
+        margin-left: -3rem;
+        padding-right: 3rem;
+    }
+}
