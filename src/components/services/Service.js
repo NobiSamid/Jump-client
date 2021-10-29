@@ -16,7 +16,7 @@ const Service = (props) => {
                 <p>Location: {location}</p>
                 <p>Requirements: {requirements}</p>
                 <p>Description: {description}</p>
-                <h5>Cost: {cost}</h5>
+                <h5>Cost: {cost}$</h5>
                 <Link to={`/services/${_id}`}>
                 <Button variant="warning" >Let's do it</Button>
                 </Link>

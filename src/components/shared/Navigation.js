@@ -44,7 +44,12 @@ const Navigation = () => {
                         <Nav.Link className="navtxt" as={Link} to="/about" >
                             About
                         </Nav.Link>
-
+                        
+                        {/* user photo */}
+                        {
+                            user.email && <img src={user.photoURL} style={{borderRadius:"30rem", height:"3rem", width:"auto"}} alt='user' />
+                          
+                        }
                         {/* If user is Loging then show username or email */}
                         {
                             user.email &&
