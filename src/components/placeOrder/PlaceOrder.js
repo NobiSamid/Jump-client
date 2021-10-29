@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
@@ -24,6 +25,14 @@ const PlaceOrder = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
       console.log(data);
+      axios.post('http://localhost:5000/users', data)
+      .then(res => {
+          console.log(res);
+          if(res.data.insertedId){
+              alert('user added successfully')
+              reset()
+            }
+      })
     }
     
     return (
@@ -33,7 +42,7 @@ const PlaceOrder = () => {
                 <input value={exactService[0]?.title || ''} readOnly {...register("service", { required: true})} /><br/>
                 <input value={user?.displayName} {...register("name", { required: true})} /><br/>
                 <input type="number" placeholder="Age" {...register("age")} /><br/>
-                <input placeholder="Phone number" type="tel" {...register("phone")} /><br/>
+                <input placeholder="Phone number" {...register("phone")} /><br/>
                 <input value={user?.email} type="email" {...register("email")} /><br/>
                 <textarea placeholder="Passport number" type="number" {...register("passport")} /><br/>
                 <input placeholder="Date" type="date" {...register("date")} /><br/>
