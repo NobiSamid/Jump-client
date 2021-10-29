@@ -21,7 +21,7 @@ const PlaceOrder = () => {
     },[])
     
     const exactService = servForm.filter(sId=> sId._id == skey);
-    console.log(exactService[0]?.title);
+    // console.log(exactService[0]?.title);
 
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {

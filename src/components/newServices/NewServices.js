@@ -1,22 +1,40 @@
 import axios from 'axios';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import useAuth from '../../hook/useAuth';
 import "./NewServices.css";
 
 const NewServices = () => {
+    
     const { register, handleSubmit, reset } = useForm();
-  const onSubmit = data => {
-      console.log(data);
+    const { user } = useAuth();
 
-    //   axios.post('http://localhost:5000/services', data)
-      axios.post('https://blooming-basin-61884.herokuapp.com/services', data)
-      .then(res =>{
-          console.log(res)
-          if(res.data.insertedId){
-              alert('data added successfully')
-              reset();
-          }
-      })
+    const adminEmail = "nobisamid@gmail.com";
+
+    const onSubmit = data => {
+      console.log(data);
+      console.log("admin email: ",adminEmail);
+      console.log("user email: ",user.email);
+
+      if(adminEmail == user.email){
+          console.log('tumi admin tai add korte dilam nato ditam na');
+
+           // axios.post('http://localhost:5000/services', data)
+            axios.post('https://blooming-basin-61884.herokuapp.com/services', data)
+            .then(res =>{
+                console.log(res)
+                if(res.data.insertedId){
+                    alert('data added successfully')
+                    reset();
+                }
+            })
+        }
+        else{
+            alert('ONly admin can add new service, hehe boy')
+        }
+
+
+     
     }
     return (
         <div>
