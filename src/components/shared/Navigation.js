@@ -1,8 +1,12 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useAuth from '../../hook/useAuth';
 
 const Navigation = () => {
+
+    const {user, logOut} = useAuth();
+
     return (
         <div>
            <Navbar bg="light" variant="light" sticky="top" expand="lg">
@@ -22,37 +26,40 @@ const Navigation = () => {
                         <Nav.Link className="navtxt" as={Link} to="/services">
                             Adventures
                         </Nav.Link>
-                        <Nav.Link className="navtxt" as={Link} to="/placeorder">
-                            Place-Reservation
-                        </Nav.Link>
-                        <Nav.Link className="navtxt" as={Link} to="/myorders" >
-                            My-Reservations
-                        </Nav.Link>
-                        <Nav.Link className="navtxt" as={Link} to="/manageorders" >
-                            Manage-Reservations
-                        </Nav.Link>
+                        {
+                            user.email &&
+                            <Nav.Link className="navtxt" as={Link} to="/myorders" >
+                                My-Reservations
+                            </Nav.Link>
+                        }
+                        {
+                            user.email &&
+                            <Nav.Link className="navtxt" as={Link} to="/manageorders" >
+                                Manage-Reservations
+                            </Nav.Link>
+                        }
                         <Nav.Link className="navtxt" as={Link} to="/newservice" >
                             Add New Adventure
                         </Nav.Link>
                         <Nav.Link className="navtxt" as={Link} to="/about" >
                             About
                         </Nav.Link>
+
+                        {/* If user is Loging then show username or email */}
+                        {
+                            user.email &&
+                            <Navbar.Text className="navtxt">
+                             <a href="#login">{user.displayName ? user.displayName : user.email }</a>
+                            </Navbar.Text>
+                        }
                         
                         {/* If user Logged in or not then Display functionality by turnary operator */}
-                        {/* {
+                        {
                             user?.email ?
-                            <Button className="navtxt" onClick={logOut} variant="light">Log-out</Button> 
+                            <Button className="navtxt" onClick={logOut} variant="secondary">Log-out</Button> 
                             :
                             <Nav.Link  as={Link} className="txtnav" to="/login">Log-in</Nav.Link>
                         }
-
-                        {/* If user is Loging then show username or email */}
-                        {/* {
-                            user.email &&
-                            <Navbar.Text className="navtxt">
-                             <FontAwesomeIcon icon={faUser}></FontAwesomeIcon> <a href="#login">{user.displayName ? user.displayName : user.email }</a>
-                            </Navbar.Text>
-                        } */}
                         
                     </Nav>
                 </Navbar.Collapse>
