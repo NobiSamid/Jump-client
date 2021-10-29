@@ -40,15 +40,15 @@ function App() {
             {/* <Route path="/placeorder">
               <PlaceOrder></PlaceOrder>
             </Route> */}
-            <Route path="/myorders">
+            <PrivateRoute path="/myorders">
               <MyOrders></MyOrders>
-            </Route>
-            <Route path="/manageorders">
+            </PrivateRoute>
+            <PrivateRoute path="/manageorders">
               <ManageOrders></ManageOrders>
-            </Route>
-            <Route path="/newservice">
+            </PrivateRoute>
+            <PrivateRoute path="/newservice">
               <NewServices></NewServices>
-            </Route>
+            </PrivateRoute>
             <Route path="/about">
               <About></About>
             </Route>

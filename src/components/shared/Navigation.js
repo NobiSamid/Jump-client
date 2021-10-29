@@ -11,7 +11,7 @@ const Navigation = () => {
         <div>
            <Navbar bg="light" variant="light" sticky="top" expand="lg">
             <Container fluid>
-                <Navbar.Brand className="ms-5 txth" href="/">Spine Firm</Navbar.Brand>
+                <Navbar.Brand className="ms-5 txth" href="/">J U M P</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse className='justify-content-end' id="navbarScroll">
                     <Nav
