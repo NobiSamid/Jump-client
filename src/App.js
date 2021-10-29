@@ -16,6 +16,7 @@ import About from './components/about/About';
 import NotFound from './components/notfound/NotFound';
 import Login from './authentication/Login';
 import AuthProvider from './context/AuthProvider';
+import PrivateRoute from './privateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -33,9 +34,9 @@ function App() {
             <Route exact path="/services">
               <Services></Services>
             </Route>
-            <Route exact path="/services/:skey">
+            <PrivateRoute exact path="/services/:skey">
               <PlaceOrder></PlaceOrder>
-            </Route>
+            </PrivateRoute>
             {/* <Route path="/placeorder">
               <PlaceOrder></PlaceOrder>
             </Route> */}

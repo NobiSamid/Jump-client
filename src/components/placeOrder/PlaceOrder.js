@@ -37,7 +37,7 @@ const PlaceOrder = () => {
                 <input value={user?.email} type="email" {...register("email")} /><br/>
                 <textarea placeholder="Passport number" type="number" {...register("passport")} /><br/>
                 <input placeholder="Date" type="date" {...register("date")} /><br/>
-                <input placeholder="" type="submit" />
+                <input placeholder="" type="submit" /><br/>
             </form>
         </div>
     );
