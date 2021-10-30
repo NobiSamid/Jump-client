@@ -42,8 +42,14 @@ const Home = () => {
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
+
+            {/****************** React Chart *******************/}
             <ReChart></ReChart>
+
+            {/****************** Service *******************/}
             <Services></Services>
+
+            {/****************** FAQ *******************/}
             <div className="faq">
                 <h2>Friquently Asked Question</h2>
                 <Accordion defaultActiveKey="0">

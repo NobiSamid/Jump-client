@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import useAuth from '../../hook/useAuth';
 // import Order from './Order';
-import { Button } from 'react-bootstrap';
+import { Button, Spinner } from 'react-bootstrap';
 import './MyOrders.css';
 
 
@@ -50,27 +50,39 @@ const MyOrders = () => {
     return (
         <div className="mng-my-odr">
             <h1 className="reservation-head">Your Reservations</h1>
-            <div className="my-orders">
-                {
-                    myReserved.map(myRes=>
-                    <div className="my-order" key={myRes._id} >
-                        <div>
-                            <img className="user-img" src={user.photoURL} alt="user-preview" />
-                        </div>
-                        <div>
-                            <h3>{myRes.name}</h3>
-                            <h2>{myRes.service}</h2>
-                            <p>{myRes.date}</p>
-                            <p>Status: {myRes.status}</p>
-                        </div>
-                        <div>
-                            {/* <Button variant="warning">Update</Button> */}
-                            <Button onClick={()=> handleDelete(myRes._id)} variant="danger">Delete</Button>
-                        </div>
-                        
-                    </div>)
-                }
-            </div>
+            {
+                myReserved.length === 0 ?
+                <div>
+                    <h1>Loading...</h1>
+                    <Spinner animation="grow" variant="success" />
+                    <Spinner animation="grow" variant="danger" />
+                    <Spinner animation="grow" variant="warning" />
+                </div>
+                :
+                <div className="my-orders">
+                    {
+                        myReserved.map(myRes=>
+                        <div className="my-order" key={myRes._id} >
+                            <div>
+                                <img className="user-img" src={user.photoURL} alt="user-preview" />
+                            </div>
+                            <div>
+                                <h3>{myRes.name}</h3>
+                                <h2>{myRes.service}</h2>
+                                <p>{myRes.date}</p>
+                                <p>Status: {myRes.status}</p>
+                            </div>
+                            <div>
+                                {/* <Button variant="warning">Update</Button> */}
+                                <Button onClick={()=> handleDelete(myRes._id)} variant="danger">Delete</Button>
+                            </div>
+                            
+                        </div>)
+                    }
+                </div>
+
+            }
+            
         </div>
     );
 };

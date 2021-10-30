@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 // import User from './User';
-import { Button } from 'react-bootstrap';
+import { Button, Spinner } from 'react-bootstrap';
 import useAuth from '../../hook/useAuth';
 import './ManageOrders.css';
 
@@ -52,25 +52,36 @@ const ManageOrders = () => {
     return (
         <div className="mng-odr-main">
             <h1 className="manage-head">Manage all orders here</h1>
-            <div className="all-users">
-                {
-                    users.map(user=>
-                    <div className="user-card" key={user._id}>
-                        <div>
-                            <img className="user-img-all" src={user?.photoURL} alt="user-preview" />
-                        </div>
-                        <div>
-                            <h3>{user.name}</h3>
-                            <h2>{user.service}</h2>
-                            <p>{user.date}</p>
-                        </div>
-                        <div>
-                            <Button className="mng-btn" variant="warning">Update</Button>
-                            <Button className="mng-btn" onClick={()=> handleDelete(user._id)} variant="danger">Delete</Button>
-                        </div>
-                    </div>)
-                }
-            </div>
+            {
+                users.length === 0 ?
+                <div>
+                    <h1>Loading...</h1>
+                    <Spinner animation="grow" variant="success" />
+                    <Spinner animation="grow" variant="danger" />
+                    <Spinner animation="grow" variant="warning" />
+                </div>
+                :
+                <div className="all-users">
+                    {
+                        users.map(user=>
+                        <div className="user-card" key={user._id}>
+                            <div>
+                                <img className="user-img-all" src={user?.photoURL} alt="user-preview" />
+                            </div>
+                            <div>
+                                <h3>{user.name}</h3>
+                                <h2>{user.service}</h2>
+                                <p>{user.date}</p>
+                            </div>
+                            <div>
+                                <Button className="mng-btn" variant="warning">Update</Button>
+                                <Button className="mng-btn" onClick={()=> handleDelete(user._id)} variant="danger">Delete</Button>
+                            </div>
+                        </div>)
+                    }
+                </div>
+            }
+            
         </div>
     );
 };
