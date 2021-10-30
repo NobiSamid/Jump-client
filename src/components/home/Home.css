@@ -1,6 +1,13 @@
 .home-chart {
     margin-top: 3rem;
 }
+.home-main{
+    background-image: url('https://www.willseye.org/wp-content/uploads/2017/08/sun-clouds-blue-sky-14641020076aM.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
 
 .chart-main {
     margin: auto;

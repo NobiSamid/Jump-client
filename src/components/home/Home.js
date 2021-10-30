@@ -6,7 +6,7 @@ import './Home.css';
 
 const Home = () => {
     return (
-        <div>
+        <div className="home-main">
             <Carousel fade variant="dark">
                 <Carousel.Item interval={2000}>
                     <img

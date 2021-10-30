@@ -8,18 +8,22 @@ const Service = (props) => {
     const { title, location, requirements, description, cost, imageurl, _id} = props.service || {};
     return (
         <div className="service-card">
-            <div className="card-img">
-                <img src={imageurl} alt="card-prev" />
+            <div className="face face1">
+                <div className="content">
+                    <img className="card-img" src={imageurl} alt="card-prev" />
+                    <h3>{title}</h3>
+                </div>
             </div>
-            <div className="card-details">
-                <h3>{title}</h3>
-                <p>Location: {location}</p>
-                <p>Requirements: {requirements}</p>
-                <p>Description: {description}</p>
-                <h5>Cost: {cost}$</h5>
-                <Link to={`/services/${_id}`}>
-                <Button variant="warning" >Let's do it</Button>
-                </Link>
+            <div className="face face2">
+                <div className="content">
+                    <p>Location: {location}</p>
+                    <p>Requirements: {requirements}</p>
+                    <p>Description: {description}</p>
+                    <p>Cost: {cost}$</p>
+                    <Link to={`/services/${_id}`}>
+                    <Button className="doit-btn" variant="light" >Let's do it</Button>
+                    </Link>
+                </div>
             </div>
         </div>
     );

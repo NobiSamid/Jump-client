@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hook/useAuth';
+import './Navigation.css';
 
 const Navigation = () => {
 
@@ -47,23 +48,23 @@ const Navigation = () => {
                         
                         {/* user photo */}
                         {
-                            user.email && <img src={user.photoURL} style={{borderRadius:"30rem", height:"3rem", width:"auto"}} alt='user' />
+                            user.email && <img src={user.photoURL} className="user-photo" alt='user' />
                           
                         }
                         {/* If user is Loging then show username or email */}
                         {
                             user.email &&
-                            <Navbar.Text className="navtxt">
-                             <a href="#login">{user.displayName ? user.displayName : user.email }</a>
+                            <Navbar.Text>
+                             <a className="user-name" href="#login">{user.displayName ? user.displayName : user.email }</a>
                             </Navbar.Text>
                         }
                         
                         {/* If user Logged in or not then Display functionality by turnary operator */}
                         {
                             user?.email ?
-                            <Button className="navtxt" onClick={logOut} variant="secondary">Log-out</Button> 
+                            <Button className="log-out-btn" onClick={logOut} variant="secondary">Log-out</Button> 
                             :
-                            <Nav.Link  as={Link} className="txtnav" to="/login">Log-in</Nav.Link>
+                            <Nav.Link  as={Link} className="navtxt" to="/login">Log-in</Nav.Link>
                         }
                         
                     </Nav>
