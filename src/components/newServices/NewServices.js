@@ -37,17 +37,23 @@ const NewServices = () => {
      
     }
     return (
-        <div>
-            <h3>Let us know about your desired Adventure</h3>
-            <form className="new-service" onSubmit={handleSubmit(onSubmit)}>
-                <input placeholder="Title" {...register("title", { required: true})} /><br/>
-                <input placeholder="Location" {...register("location")} /><br/>
-                <input placeholder="Cost" type="number" {...register("cost")} /><br/>
-                <input placeholder="Requirements" {...register("requirements")} /><br/>
-                <textarea placeholder="Description" {...register("description")} /><br/>
-                <input placeholder="Image-url" {...register("imageurl")} /><br/>
-                <input placeholder="" type="submit" />
-            </form>
+        <div className="new-srvc-main">
+            <h3 className="hdng">Let us know about your desired Adventure</h3>
+            <div className="frm-qts">
+                <div>
+                    <h3 className="qts">Code is like humor. When you have to explain it, it's BAD.</h3>
+                </div>
+                <form className="new-service" onSubmit={handleSubmit(onSubmit)}>
+                    <input placeholder="Title" {...register("title", { required: true})} /><br/>
+                    <input placeholder="Location" {...register("location")} /><br/>
+                    <input placeholder="Cost" type="number" {...register("cost")} /><br/>
+                    <input placeholder="Requirements" {...register("requirements")} /><br/>
+                    <textarea placeholder="Description" {...register("description")} /><br/>
+                    <input placeholder="Image-url" {...register("imageurl")} /><br/>
+                    <input placeholder="" type="submit" />
+                </form>
+            </div>
+            
         </div>
     );
 };

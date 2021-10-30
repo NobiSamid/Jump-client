@@ -55,7 +55,7 @@ const Home = () => {
                 <Accordion defaultActiveKey="0">
                     <Accordion.Item eventKey="0">
                         <Accordion.Header>Is bungee jumping worse than skydiving?</Accordion.Header>
-                        <Accordion.Body>                
+                        <Accordion.Body variant="success" >                
                             Image result for bungee jumping skydiving
                             As with all extreme sports, there is a degree of risk involved in both bungee jumping and skydiving. ... The National Safety Council says a person is more likely to be killed being stung by a bee or struck by lightning than during tandem skydiving. Bungee jumping sports the same fatality rate or 1 in 500,000.
                         </Accordion.Body>

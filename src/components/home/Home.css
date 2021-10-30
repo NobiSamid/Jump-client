@@ -8,9 +8,14 @@
     background-size: cover;
     background-position: center;
 }
+.service-chart{
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
 
 .chart-main {
     margin: auto;
+    /* padding-bottom: 10rem; */
 }
 .faq {
     width: 65%;

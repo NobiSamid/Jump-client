@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router';
 import useAuth from '../../hook/useAuth';
+import './PlaceOrder.css';
 
 const PlaceOrder = () => {
 
@@ -44,20 +45,20 @@ const PlaceOrder = () => {
     }
     
     return (
-        <div>
-            <div>
+        <div className="place-order">
+            <div className="details">
                 <h1>What's there in Life? Let's <span>Jump</span></h1>
                 <h3>{exactService[0]?.title}</h3>
                 <p>Location: {exactService[0]?.location}</p>
                 <p>Requirements: {exactService[0]?.requirements}</p>
                 <h4>Cost: {exactService[0]?.cost}$</h4>
             </div>
-            <div>
-                <form className="new-service" onSubmit={handleSubmit(onSubmit)}>
+            <div className="frm">
+                <form className="frm-main-place" onSubmit={handleSubmit(onSubmit)}>
                     <input value={exactService[0]?.title || ''} readOnly {...register("service", { required: true})} /><br/>
                     <input value={user?.displayName} {...register("name", { required: true})} /><br/>
                     <input type="number" placeholder="Age" {...register("age")} /><br/>
-                    <input placeholder="Phone number" {...register("phone")} /><br/>
+                    <input placeholder="Phone number" type="number" {...register("phone")} /><br/>
                     <input value={user?.email} type="email" {...register("email")} /><br/>
                     <textarea placeholder="Passport number" type="number" {...register("passport")} /><br/>
                     <input placeholder="Date" type="date" {...register("date")} /><br/>
