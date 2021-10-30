@@ -11,19 +11,24 @@ const PlaceOrder = () => {
     const { user } = useAuth();
 
     const { skey } = useParams();
-    const [servForm, setServForm] = useState([]);
+    const [servForm, setServForm] = useState({});
+    const { register, handleSubmit, reset } = useForm();
 
     useEffect(()=>{
         // fetch('http://localhost:5000/services')
         fetch('https://blooming-basin-61884.herokuapp.com/services')
         .then(res=>res.json())
-        .then(data=> setServForm(data))
-    },[])
+        .then(data=> {
+            const exactService = data.find(sId=> sId._id == skey)
+            setServForm(exactService)
+            reset(exactService)
+        })
+    },[skey,reset])
     
-    const exactService = servForm.filter(sId=> sId._id == skey);
+    // const exactService = servForm.filter(sId=> sId._id == skey);
     // console.log(exactService[0]?.title);
 
-    const { register, handleSubmit, reset } = useForm();
+    // const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
       console.log(data);
     //   axios.post('http://localhost:5000/users', data)
@@ -41,21 +46,22 @@ const PlaceOrder = () => {
         <div>
             <div>
                 <h1>What's there in Life? Let's <span>Jump</span></h1>
-                <h3>{exactService[0]?.title}</h3>
-                <p>Location: {exactService[0]?.location}</p>
-                <p>Requirements: {exactService[0]?.requirements}</p>
-                <h4>Cost: {exactService[0]?.cost}$</h4>
+                <h3>{servForm?.title}</h3>
+                <p>Location: {servForm?.location}</p>
+                <p>Requirements: {servForm?.requirements}</p>
+                <h4>Cost: {servForm?.cost}$</h4>
             </div>
             <div>
                 <form className="new-service" onSubmit={handleSubmit(onSubmit)}>
-                    <input value={exactService[0]?.title || ''} readOnly {...register("service", { required: true})} /><br/>
+                    <input value={servForm?.title || ''} readOnly {...register("service", { required: true})} /><br/>
                     <input value={user?.displayName} {...register("name", { required: true})} /><br/>
                     <input type="number" placeholder="Age" {...register("age")} /><br/>
                     <input placeholder="Phone number" {...register("phone")} /><br/>
                     <input value={user?.email} type="email" {...register("email")} /><br/>
                     <textarea placeholder="Passport number" type="number" {...register("passport")} /><br/>
                     <input placeholder="Date" type="date" {...register("date")} /><br/>
-                    <input placeholder="" type="submit" /><br/>
+                    <input type="checkbox" checked value="pending"  {...register("status")} /><br/>
+                    <input type="submit" /><br/>
                 </form>
             </div>
         </div>
