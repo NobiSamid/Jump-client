@@ -18,7 +18,7 @@ const Services = () => {
         <div className="services-main">
             {
                 services.length === 0 ?
-                <div>
+                <div className="spn">
                     <h1>Loading...</h1>
                     <Spinner animation="grow" variant="success" />
                     <Spinner animation="grow" variant="danger" />

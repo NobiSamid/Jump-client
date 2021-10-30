@@ -97,6 +97,10 @@
     width: 40rem;
     border-radius: 2rem;
 }
+.spn{
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+}
 
 @media only screen and (max-width:688px) {
     .all-services {
