@@ -4,7 +4,7 @@ import { useState } from 'react';
 // import User from './User';
 import { Button } from 'react-bootstrap';
 import useAuth from '../../hook/useAuth';
-import './User.css';
+import './ManageOrders.css';
 
 const ManageOrders = () => {
 
@@ -49,8 +49,8 @@ const ManageOrders = () => {
     }
 
     return (
-        <div>
-            <h3>Manage all orders here</h3>
+        <div className="mng-odr-main">
+            <h1 className="manage-head">Manage all orders here</h1>
             <div className="all-users">
                 {
                     users.map(user=>
@@ -61,8 +61,8 @@ const ManageOrders = () => {
                             <p>{user.date}</p>
                         </div>
                         <div>
-                            <Button variant="warning">Update</Button>
-                            <Button onClick={()=> handleDelete(user._id)} variant="danger">Delete</Button>
+                            <Button className="mng-btn" variant="warning">Update</Button>
+                            <Button className="mng-btn" onClick={()=> handleDelete(user._id)} variant="danger">Delete</Button>
                         </div>
                     </div>)
                 }

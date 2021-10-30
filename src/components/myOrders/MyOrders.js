@@ -48,12 +48,13 @@ const MyOrders = () => {
 
 
     return (
-        <div>
-            <h3>here what i ordered</h3>
+        <div className="mng-my-odr">
+            <h1 className="reservation-head">Your Reservations</h1>
             <div className="my-orders">
                 {
                     myReserved.map(myRes=>
                     <div className="my-order" key={myRes._id} >
+                        
                         <div>
                             <h3>{myRes.name}</h3>
                             <h2>{myRes.service}</h2>
@@ -64,6 +65,7 @@ const MyOrders = () => {
                             {/* <Button variant="warning">Update</Button> */}
                             <Button onClick={()=> handleDelete(myRes._id)} variant="danger">Delete</Button>
                         </div>
+                        
                     </div>)
                 }
             </div>

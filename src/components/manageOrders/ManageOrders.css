@@ -1,23 +1,22 @@
-.mng-my-odr{
+.mng-odr-main{
     background-image: url('https://www.willseye.org/wp-content/uploads/2017/08/sun-clouds-blue-sky-14641020076aM.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
 }
-.reservation-head{
+.manage-head{
     margin: auto;
     padding: 3rem;
 }
-.my-orders{
+.all-users{
     margin-left: 3rem;
     padding-bottom: 3rem;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-row-gap: 1rem;
 }
-
-.my-order{
+.user-card{
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.027), rgba(255, 255, 255, 0));
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -30,4 +29,7 @@
     align-items: center;
     justify-content: space-evenly;
     margin: auto;
+}
+.mng-btn{
+    margin: 1rem;
 }
