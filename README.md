@@ -1,5 +1,5 @@
 # JUMP
-[Live link of JUMP](https://jump-29574.web.app/)
+[Live link of JUMP](https://jump-29574.web.app/)\
 [Server link of JUMP](https://blooming-basin-61884.herokuapp.com/)
 
 # About JUMP website
