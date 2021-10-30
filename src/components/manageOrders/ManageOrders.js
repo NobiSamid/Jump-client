@@ -9,6 +9,7 @@ import './ManageOrders.css';
 const ManageOrders = () => {
 
     const { user } = useAuth();
+    console.log(user?.photoURL);
     const adminEmail = "nobisamid@gmail.com";
 
     const [users, setUsers] = useState([]);
@@ -55,6 +56,9 @@ const ManageOrders = () => {
                 {
                     users.map(user=>
                     <div className="user-card" key={user._id}>
+                        <div>
+                            <img className="user-img-all" src={user?.photoURL} alt="user-preview" />
+                        </div>
                         <div>
                             <h3>{user.name}</h3>
                             <h2>{user.service}</h2>

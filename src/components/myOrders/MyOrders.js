@@ -54,9 +54,11 @@ const MyOrders = () => {
                 {
                     myReserved.map(myRes=>
                     <div className="my-order" key={myRes._id} >
-                        
                         <div>
-                            <h3>hello{myRes.name}</h3>
+                            <img className="user-img" src={user.photoURL} alt="user-preview" />
+                        </div>
+                        <div>
+                            <h3>{myRes.name}</h3>
                             <h2>{myRes.service}</h2>
                             <p>{myRes.date}</p>
                             <p>Status: {myRes.status}</p>

@@ -16,6 +16,13 @@
     grid-template-columns: repeat(1, 1fr);
     grid-row-gap: 1rem;
 }
+.user-img{
+    border-radius: 30rem;
+    height: 7rem;
+    width: auto;
+    padding: 2px;
+    border: 2px solid rgba(0, 128, 0, 0.335);
+}
 
 .my-order{
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.027), rgba(255, 255, 255, 0));

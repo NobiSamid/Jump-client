@@ -9,6 +9,13 @@
     margin: auto;
     padding: 3rem;
 }
+.user-img-all{
+    border-radius: 30rem;
+    height: 7rem;
+    width: auto;
+    padding: 2px;
+    border: 2px solid rgba(0, 128, 0, 0.335);
+}
 .all-users{
     margin-left: 3rem;
     padding-bottom: 3rem;
