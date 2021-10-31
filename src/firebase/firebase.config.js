@@ -1,3 +1,4 @@
+// Firebase config data
 const firebaseConfig = {
     apiKey: "AIzaSyBZ1Bm6gjK6hM9evhYIe-wvErIC93-tRaY",
     authDomain: "jump-29574.firebaseapp.com",

@@ -5,6 +5,8 @@ import useAuth from '../hook/useAuth';
 
 const PrivateRoute = ({children, ...rest}) => {
 
+    ////////////////   to sequire the website private route created here
+
     const { user, isLoading } = useAuth();
     if(isLoading){
         return(

@@ -22,6 +22,7 @@ import Update from './components/manageOrders/Update';
 function App() {
   return (
     <div className="App">
+    {/* Comonents are in the authProvider that contex can pass data to every component in it */}
       <AuthProvider>
         <Router>
           <Navigation></Navigation>

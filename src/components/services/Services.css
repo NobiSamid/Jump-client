@@ -17,6 +17,7 @@
 }
 .service-card{
     position: relative;
+    align-items: center;
 }
 .service-card .face{
     width: 40rem;

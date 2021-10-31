@@ -7,6 +7,7 @@ import './Home.css';
 const Home = () => {
     return (
         <div className="home-main">
+        {/**************** Carousel **************/}
             <Carousel fade variant="dark">
                 <Carousel.Item interval={2000}>
                     <img
@@ -15,8 +16,9 @@ const Home = () => {
                     src="https://miro.medium.com/max/9720/1*WIgSF4IP8LPzOKp4l6j8qw.jpeg"
                     alt="First slide"
                     />
-                    <Carousel.Caption>
+                    <Carousel.Caption className="c-cap">
                     <h3 className="animate__animated animate__zoomIn heading">Sky-Diving</h3>
+                    <p>We provide the best tour service for exiting events and activities</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item interval={2000}>
@@ -26,8 +28,9 @@ const Home = () => {
                     src="https://greatline.eu/wp-content/uploads/2018/12/Bungee-main-photo.jpg"
                     alt="Second slide"
                     />
-                    <Carousel.Caption>
+                    <Carousel.Caption className="c-cap">
                     <h3 className="animate__animated animate__zoomIn heading">Bungee-Jumping</h3>
+                    <p>Connected with over 100 countries around the world</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item interval={2000}>
@@ -37,19 +40,23 @@ const Home = () => {
                     src="https://i.ytimg.com/vi/I6VpZ3bnnKI/maxresdefault.jpg"
                     alt="Third slide"
                     />
-                    <Carousel.Caption>
+                    <Carousel.Caption className="c-cap">
                     <h3 className="animate__animated animate__zoomIn heading">Wingsuit-Flying</h3>
+                    <p>Let us know about your most exiting tour event or activites , we will make that happen</p>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
 
+
             {/****************** React Chart *******************/}
             <ReChart></ReChart>
+
 
             {/****************** Service *******************/}
             <Services></Services>
 
-            {/****************** FAQ *******************/}
+
+            {/****************** FAQ by accordion*******************/}
             <div className="faq">
                 <h2>Friquently Asked Question</h2>
                 <Accordion defaultActiveKey="0">

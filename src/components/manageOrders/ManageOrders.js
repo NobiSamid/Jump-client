@@ -10,9 +10,11 @@ import './ManageOrders.css';
 const ManageOrders = () => {
 
     const { user } = useAuth();
-    console.log(user?.photoURL);
+
+    // setting the Admin email . everywere by this email admin filtered
     const adminEmail = "nobisamid@gmail.com";
 
+    /// fetching data from server with useEffect then setting in a useState
     const [users, setUsers] = useState([]);
     useEffect(()=>{
         fetch('https://blooming-basin-61884.herokuapp.com/users')
@@ -21,6 +23,7 @@ const ManageOrders = () => {
         .then(data=>setUsers(data))
     },[])
 
+    /// Delete function of CRUD operation of backend
     const handleDelete = id =>{
         const userEmail = user.email;
         if( userEmail == adminEmail){
@@ -76,7 +79,10 @@ const ManageOrders = () => {
                                 <p>{user?.status || ''}</p>
                             </div>
                             <div>
+                            {/**************** update button take you to the update page **************/}
                                 <Link to={`/manageorders/edit/${user._id}`}><Button className="mng-btn" variant="warning">Update</Button></Link>
+
+                                {/**************** by clicking this button fire the delete function which only works for admin **************/}
                                 <Button className="mng-btn" onClick={()=> handleDelete(user._id)} variant="danger">Delete</Button>
                             </div>
                         </div>)

@@ -13,6 +13,7 @@ initializeAuthentication();
 
 const useFirebase = () =>{
 
+// Calling getAuth and Google provider for authentication
 
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
@@ -22,6 +23,7 @@ const useFirebase = () =>{
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState("");
 
+    //Sign in using Google pop up authentication function
     const signInUsingGoogle = () =>{
         setIsLoading(true);
        return signInWithPopup(auth, googleProvider)
@@ -30,7 +32,7 @@ const useFirebase = () =>{
         });
     } 
 
- 
+ // This is Observer that observe the user
     useEffect(()=>{
         const unSubscribed = onAuthStateChanged(auth, user =>{
             if(user){
@@ -44,14 +46,14 @@ const useFirebase = () =>{
         return () => unSubscribed;
     },[])
 
-
+// Log out function 
    const logOut = () =>{
        setIsLoading(true);
        signOut(auth)
        .then(()=>{})
        .finally(()=>setIsLoading(false));
     }
-
+// return the function data
     return{
         setUser,
         user,

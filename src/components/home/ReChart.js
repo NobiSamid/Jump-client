@@ -50,7 +50,7 @@ const ReChart = () => {
 ];
     return (
         <div className="service-chart">
-        <h1>Services that provided through out the year</h1>
+        <h1>Tourist that travelled with us</h1>
 
         {/* Services Barchart */}
             <BarChart className="chart-main"

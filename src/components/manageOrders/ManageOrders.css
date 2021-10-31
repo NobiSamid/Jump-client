@@ -40,3 +40,32 @@
 .mng-btn{
     margin: 1rem;
 }
+
+.update-div{
+    height: 40rem;
+}
+.update-div h1{
+    margin-top: 3rem;
+    font-size: 4rem;
+    font-weight: 700;
+}
+.update-div h3{
+    margin-top: 1rem;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+.update-div form input{
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+.update-pg-btn{
+    width: 7rem;
+    background-color: antiquewhite;
+    color: black;
+    font-size: large;
+    font-weight: 700;
+}
+.update-pg-btn:hover{
+    color:antiquewhite;
+    background-color: black;
+}

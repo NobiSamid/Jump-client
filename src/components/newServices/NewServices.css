@@ -12,6 +12,7 @@
 }
 .frm-qts{
     display: flex;
+    flex-direction: row;
     align-items: center;
     padding-bottom: 3rem;
 }
@@ -41,4 +42,13 @@
     padding: 1rem;
     border-radius: 1rem;
 
+}
+
+@media only screen and (max-width:688px){
+    .frm-qts{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 3rem;
+    }
 }

@@ -2,6 +2,8 @@ import React from 'react';
 import { createContext } from 'react';
 import useFirebase from '../hook/useFirebase';
 
+// This is context component to pass data of useFirebase by useAuth globally
+
 
 export const AuthContext = createContext();
 

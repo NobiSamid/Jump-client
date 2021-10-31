@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: row;
     margin-bottom: 2rem;
+    align-items: center;
 }
 .msn-img{
     width: 100%;
@@ -28,6 +29,8 @@
 .vision{
     display: flex;
     flex-direction: row;
+    align-items: center
+    ;
 }
 .vsn-img{
     width: 50%;
@@ -49,4 +52,16 @@
 .vsn-txt p{
     font-size:x-large;
     font-weight: 700;
+}
+
+@media only screen and (max-width:688px){
+    .mission{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+    }
+    .vision{
+        display: flex;
+        flex-direction: column;
+    }
 }
