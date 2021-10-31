@@ -11,6 +11,7 @@ const MyOrders = () => {
     
     // console.log(userEmail);
 
+    // Fetching the data of user then setting in state
     const [users, setUsers] = useState([]);
 
     useEffect(()=>{
@@ -20,12 +21,14 @@ const MyOrders = () => {
         .then(data=>setUsers(data))
     },[])
 
+    // filtering the Data of the user that logged in
     const userEmail = user?.email;
     const myReserved = users.filter(mr=> mr.email == userEmail);
     console.log(myReserved);
 
+    // Delete function for the user to delete the event
     const handleDelete = id =>{
-        const proceed = window.confirm('Are you sure, you want to delete this note???????');
+        const proceed = window.confirm('Are you sure, you want to delete this event???????');
         if(proceed){
             console.log('delete kore dei eta?', id);
             const url = `https://blooming-basin-61884.herokuapp.com/users/${id}`;
@@ -74,6 +77,7 @@ const MyOrders = () => {
                             </div>
                             <div>
                                 {/* <Button variant="warning">Update</Button> */}
+                                {/**************** Calling delete function **************/}
                                 <Button onClick={()=> handleDelete(myRes._id)} variant="danger">Delete</Button>
                             </div>
                             

@@ -9,6 +9,7 @@ const NewServices = () => {
     const { register, handleSubmit, reset } = useForm();
     const { user } = useAuth();
 
+    // setting admin filter paper
     const adminEmail = "nobisamid@gmail.com";
 
     const onSubmit = data => {
@@ -16,6 +17,9 @@ const NewServices = () => {
       console.log("admin email: ",adminEmail);
       console.log("user email: ",user.email);
 
+
+      /// implimented if else statement to know the user is admin or not if he is admin the we let him do the rest operation. 
+      // admin can post new service in the website 
       if(adminEmail == user.email){
           console.log('tumi admin tai add korte dilam nato ditam na');
 
@@ -43,6 +47,7 @@ const NewServices = () => {
                 <div>
                     <h3 className="qts">Code is like humor. When you have to explain it, it's BAD.</h3>
                 </div>
+                {/**************** Using hook form here **************/}
                 <form className="new-service" onSubmit={handleSubmit(onSubmit)}>
                     <input placeholder="Title" {...register("title", { required: true})} /><br/>
                     <input placeholder="Location" {...register("location")} /><br/>

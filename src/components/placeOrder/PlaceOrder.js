@@ -14,6 +14,8 @@ const PlaceOrder = () => {
     const [servForm, setServForm] = useState({});
     const { register, handleSubmit, reset } = useForm();
 
+
+/// fetching data of service 
     useEffect(()=>{
         // fetch('http://localhost:5000/services')
         fetch(`https://blooming-basin-61884.herokuapp.com/services/${skey}`)
@@ -25,7 +27,8 @@ const PlaceOrder = () => {
     const onSubmit = data => {
       console.log(data);
 
-        //////////////  post
+        //////////////  posting the data of the event the user wants
+        
         // axios.post('http://localhost:5000/users', data)
         axios.post('https://blooming-basin-61884.herokuapp.com/users', data)
         .then(res => {
