@@ -7,6 +7,8 @@ import './Services.css';
 
 const Services = () => {
 
+    ///// service cards fetch and display
+
     const [services, setServices] = useState([]);
     useEffect(()=>{
         // fetch('http://localhost:5000/services')

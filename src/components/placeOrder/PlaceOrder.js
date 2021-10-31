@@ -28,7 +28,7 @@ const PlaceOrder = () => {
       console.log(data);
 
         //////////////  posting the data of the event the user wants
-        
+
         // axios.post('http://localhost:5000/users', data)
         axios.post('https://blooming-basin-61884.herokuapp.com/users', data)
         .then(res => {
@@ -52,6 +52,7 @@ const PlaceOrder = () => {
                 <h4>Cost: {servForm?.cost}$</h4>
             </div>
             <div className="frm">
+             {/************* input data with react hook form ***************/}
                 <form className="frm-main-place" onSubmit={handleSubmit(onSubmit)}>
                     <input value={servForm?.title || ''} readOnly {...register("service", { required: true})} /><br/>
                     <input value={user?.displayName} {...register("name", { required: true})} /><br/>
@@ -60,6 +61,7 @@ const PlaceOrder = () => {
                     <input value={user?.email} type="email" {...register("email")} /><br/>
                     <textarea placeholder="Passport number" type="number" {...register("passport")} /><br/>
                     <input placeholder="Date" type="date" {...register("date")} /><br/>
+                    {/******* status pending check box ***********/}
                     <div style={{display:"flex", flexDirection:"row"}}>
                         <input style={{marginLeft:"-25%"}} type="checkbox" checked name="testing" value="pending"  {...register("status")} />
                         <label style={{marginLeft:"-38%", marginTop:"-1%"}} htmlFor="acceptTerms" className="form-check-label">Accept Terms & Conditions</label>

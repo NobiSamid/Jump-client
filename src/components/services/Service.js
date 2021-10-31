@@ -6,6 +6,8 @@ import "./Services.css";
 const Service = (props) => {
     
     const { title, location, requirements, description, cost, imageurl, _id} = props.service || {};
+
+    // //////simple service card display
     return (
         <div className="service-card">
             <div className="face face1">
