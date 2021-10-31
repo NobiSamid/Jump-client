@@ -30,23 +30,30 @@ const Update = () => {
         setEvent(updateEventStatus)
     }
     const handleUpdate = e =>{
-        // const url = `http://localhost:5000/users/${userId}`;
-        const url = `https://blooming-basin-61884.herokuapp.com/users/${userId}`;
-        fetch(url, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(event)
-        })
-        .then(res => res.json())
-        .then(data =>{
-            console.log(data);
-            if(data.modifiedCount > 0){
-                alert("Updated Successfully")
-            }
-        })
-        console.log(event);
+        const userEmail = user.email;
+        if(userEmail == adminEmail){
+            // const url = `http://localhost:5000/users/${userId}`;
+            const url = `https://blooming-basin-61884.herokuapp.com/users/${userId}`;
+            fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(event)
+            })
+            .then(res => res.json())
+            .then(data =>{
+                console.log(data);
+                if(data.modifiedCount > 0){
+                    alert("Updated Successfully")
+                }
+            })
+            console.log(event);
+        }
+        else{
+            alert("only Admin can Update your event status")
+        }
+        
         e.preventDefault()
     }
     return (
