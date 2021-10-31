@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 // import User from './User';
 import { Button, Spinner } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import useAuth from '../../hook/useAuth';
 import './ManageOrders.css';
 
@@ -72,9 +73,10 @@ const ManageOrders = () => {
                                 <h3>{user.name}</h3>
                                 <h2>{user.service}</h2>
                                 <p>{user.date}</p>
+                                <p>{user?.status || ''}</p>
                             </div>
                             <div>
-                                <Button className="mng-btn" variant="warning">Update</Button>
+                                <Link to={`/manageorders/edit/${user._id}`}><Button className="mng-btn" variant="warning">Update</Button></Link>
                                 <Button className="mng-btn" onClick={()=> handleDelete(user._id)} variant="danger">Delete</Button>
                             </div>
                         </div>)

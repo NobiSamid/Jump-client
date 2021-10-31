@@ -17,6 +17,7 @@ import NotFound from './components/notfound/NotFound';
 import Login from './authentication/Login';
 import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './privateRoute/PrivateRoute';
+import Update from './components/manageOrders/Update';
 
 function App() {
   return (
@@ -43,8 +44,11 @@ function App() {
             <PrivateRoute path="/myorders">
               <MyOrders></MyOrders>
             </PrivateRoute>
-            <PrivateRoute path="/manageorders">
+            <PrivateRoute exact path="/manageorders">
               <ManageOrders></ManageOrders>
+            </PrivateRoute>
+            <PrivateRoute exact path="/manageorders/edit/:userId">
+              <Update></Update>
             </PrivateRoute>
             <PrivateRoute path="/newservice">
               <NewServices></NewServices>
