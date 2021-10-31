@@ -57,7 +57,12 @@ const PlaceOrder = () => {
                     <input value={user?.email} type="email" {...register("email")} /><br/>
                     <textarea placeholder="Passport number" type="number" {...register("passport")} /><br/>
                     <input placeholder="Date" type="date" {...register("date")} /><br/>
-                    <input type="checkbox" checked value="pending"  {...register("status")} /><br/>
+                    <div style={{display:"flex", flexDirection:"row"}}>
+                        <input style={{marginLeft:"-25%"}} type="checkbox" checked name="testing" value="pending"  {...register("status")} />
+                        <label style={{marginLeft:"-38%", marginTop:"-1%"}} htmlFor="acceptTerms" className="form-check-label">Accept Terms & Conditions</label>
+                    </div>
+                    <br/>
+                    <label style={{color:"red"}} htmlFor="acceptTerms" className="form-check-label">Please Press the Submit button twice after refresh to submit</label>
                     <input type="submit" /><br/>
                 </form>
             </div>

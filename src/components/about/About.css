@@ -1,0 +1,52 @@
+.mission{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2rem;
+}
+.msn-img{
+    width: 100%;
+    height: auto;
+    border-radius: 2rem;
+}
+.msn-txt h1{
+    font-size: 4rem;
+    font-weight: 800;
+}
+.msn-p{
+    font-size:x-large;
+    font-weight: 700;
+}
+.msn-img-div{
+    width: 50%;
+    padding: 3rem;
+}
+.msn-txt{
+    padding: 3rem;
+    width: 50%;
+}
+
+.vision{
+    display: flex;
+    flex-direction: row;
+}
+.vsn-img{
+    width: 50%;
+    padding: 3rem;
+}
+.vsn-img img{
+    width: 100%;
+    height: auto;
+    border-radius: 2rem;
+}
+.vsn-txt{
+    width: 50%;
+    padding: 3rem;
+}
+.vsn-txt h1{
+    font-size: 4rem;
+    font-weight: 800;
+}
+.vsn-txt p{
+    font-size:x-large;
+    font-weight: 700;
+}
