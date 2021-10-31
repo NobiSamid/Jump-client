@@ -27,7 +27,7 @@ const ManageOrders = () => {
     const handleDelete = id =>{
         const userEmail = user.email;
         if( userEmail == adminEmail){
-            const proceed = window.confirm('Are you sure, you want to delete this note???????');
+            const proceed = window.confirm('Are you sure, you want to delete this event ?????');
             if(proceed){
                 console.log('delete kore dei eta?', id);
                 const url = `https://blooming-basin-61884.herokuapp.com/users/${id}`;
