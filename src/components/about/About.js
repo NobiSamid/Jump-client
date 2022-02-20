@@ -14,6 +14,7 @@ const About = () => {
                         You don't have to worry about all those things like wheere to go what to do and all other stuff. We will provide all kind of services to make sure that you would be able to do those exiting and adventuras activity.
                         We are connected with over the 200 counties around the world.It doesn't matter where are you from you just have to fulfill out criteria.
                         In breaf we are here to make you feel comfortable to do such things.
+                        for testing purposes.
                     </p>
                 </div>
                 <div className="msn-img-div">
